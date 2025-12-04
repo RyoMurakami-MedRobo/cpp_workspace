@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "mkdir -p build && cd build && cmake .. && make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "rm -rf build",
+            "group": "build"
+        },
+        {
+            "label": "compile current file",
+            "type": "shell",
+            "command": "clang++ -std=c++17 -Wall -Wextra -o ${fileBasenameNoExtension} ${file}",
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
+
